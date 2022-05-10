@@ -1,3 +1,4 @@
+import 'package:example/rules/my_custom_rule.dart';
 import 'package:flutter/material.dart';
 import 'package:pvalidator/pvalidator.dart';
 
@@ -65,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController sameController = TextEditingController();
   TextEditingController sizeStringController = TextEditingController();
   TextEditingController multipleController = TextEditingController();
+  TextEditingController customController = TextEditingController();
 
   void _save() {
     if (_formKey.currentState!.validate()) {}
@@ -86,6 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
     sameController.text = '123456';
     sizeStringController.text = '123456';
     multipleController.text = '';
+    customController.text = 'other string';
     super.initState();
   }
 
@@ -276,6 +279,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       return PValidator([
                         PRuleRequired(string),
                         PRuleSizeString(string, 5),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('Custom Rule'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: customController,
+                    validator: (string) {
+                      return PValidator([
+                        MyCustomRule(string),
                       ]).val();
                     },
                   ),

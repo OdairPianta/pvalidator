@@ -1,6 +1,7 @@
 library pvalidator;
 
 export 'src/pvalidator.dart';
+export 'src/rules/rule.dart';
 export 'src/rules/prule_accept_values.dart';
 export 'src/rules/prule_date.dart';
 export 'src/rules/prule_email.dart';

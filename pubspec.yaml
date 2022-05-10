@@ -1,7 +1,7 @@
 name: pvalidator
 description: A simple helper to validate inputs on flutter
 version: 1.0.0
-homepage: pianta.dev
+homepage: https://github.com/OdairPianta/pvalidator
 
 environment:
   sdk: ">=2.16.2 <3.0.0"

@@ -11,29 +11,82 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A simple package to validate inputs in flutter.
+
+<p align="center">
+  <img src="https://https://github.com/OdairPianta/pvalidator/example/lib/assets/pvalidation_demo_screen.png?raw=true" alt="Sample PValidator" />
+</p>
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Avaliable rules
+  -Accept values: list of accepted values
+  -Date: test with DateTime.tryParse
+  -Email: email validate
+  -Max numeric: check max number
+  -Max string: check max string size
+  -Min numeric: check min number
+  -Min string: check min string size
+  -Numeric: check value is numeric
+  -Regexp: validate with regular expression
+  -Required: check if exist value
+  -Requiredif: check if exist value if
+  -Same: value must be same
+  -Size string: value size check
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+## packages.yaml
+```yaml
+pvalidator: <lastest version>
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Mandatory field validation example:
 
 ```dart
-const like = 'sample';
+TextFormField(
+  validator: (string) {
+    return PValidator([
+      PRuleRequired(string),
+    ]).val();
+  },
+)
 ```
 
-## Additional information
+PValidator is the master class. PRuleRequired is the validate rule. Set one or more rules to validate. 
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Validate with multiple rules:
+
+```dart
+TextFormField(
+  validator: (string) {
+    return PValidator([
+      PRuleRequired(string),
+      PRuleSizeString(string, 5),
+    ]).val();
+  },
+)
+```
+
+Create your custom rule
+```dart
+import 'package:pvalidator/src/rules/rule.dart';
+
+class MyCustomRule implements Rule {
+  String? _value;
+  String message;
+
+  MyCustomRule(this._value, {this.message = "Value must be equal test"});
+
+  @override
+  String? validate() {
+    if (_value == null || _value?.trim().length == 0) {
+      return null;
+    } else if (_value != "test") {
+      return message;
+    } else {
+      return null;
+    }
+  }
+}
+```
