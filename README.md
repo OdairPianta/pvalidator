@@ -20,19 +20,19 @@ A simple package to validate inputs in flutter.
 ## Features
 
 Avaliable rules
-  -Accept values: list of accepted values
-  -Date: test with DateTime.tryParse
-  -Email: email validate
-  -Max numeric: check max number
-  -Max string: check max string size
-  -Min numeric: check min number
-  -Min string: check min string size
-  -Numeric: check value is numeric
-  -Regexp: validate with regular expression
-  -Required: check if exist value
-  -Requiredif: check if exist value if
-  -Same: value must be same
-  -Size string: value size check
+* Accept values: list of accepted values
+* Date: test with DateTime.tryParse
+* Email: email validate
+* Max numeric: check max number
+* Max string: check max string size
+* Min numeric: check min number
+* Min string: check min string size
+* Numeric: check value is numeric
+* Regexp: validate with regular expression
+* Required: check if exist value
+* Requiredif: check if exist value if
+* Same: value must be same
+* Size string: value size check
 
 ## packages.yaml
 ```yaml
