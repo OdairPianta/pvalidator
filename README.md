@@ -14,7 +14,7 @@ and the Flutter guide for
 A simple package to validate inputs in flutter.
 
 <p align="center">
-  <img src="https://https://github.com/OdairPianta/pvalidator/example/lib/assets/pvalidation_demo_screen.png?raw=true" alt="Sample PValidator" />
+  <img src="https://github.com/OdairPianta/pvalidator/blob/master/example/lib/assets/pvalidation_demo_screen.png?raw=true" alt="Sample PValidator" />
 </p>
 
 ## Features
