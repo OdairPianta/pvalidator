@@ -5,3 +5,7 @@
 * Add custom rule sample
 * Change readme and changelog
 * Add licence
+
+## 1.1.0 [2022-09-20]
+* Add minimum date time rule
+* Add maximum date time rule

@@ -65,6 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController requiredifController = TextEditingController();
   TextEditingController sameController = TextEditingController();
   TextEditingController sizeStringController = TextEditingController();
+  TextEditingController minDateTimeController = TextEditingController();
+  TextEditingController maxDateTimeController = TextEditingController();
   TextEditingController multipleController = TextEditingController();
   TextEditingController customController = TextEditingController();
 
@@ -87,6 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
     requiredifController.text = '';
     sameController.text = '123456';
     sizeStringController.text = '123456';
+    minDateTimeController.text = '2000-01-01';
+    maxDateTimeController.text = '2020-01-01';
     multipleController.text = '';
     customController.text = 'other string';
     super.initState();
@@ -266,6 +270,32 @@ class _MyHomePageState extends State<MyHomePage> {
                     validator: (string) {
                       return PValidator([
                         PRuleSizeString(string, 5),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('minimumDateTime'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: minDateTimeController,
+                    validator: (string) {
+                      return PValidator([
+                        PRuleMinDateTimeString(
+                            string, DateTime.parse("2020-01-01")),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('maximumDateTime'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: maxDateTimeController,
+                    validator: (string) {
+                      return PValidator([
+                        PRuleMaxDateTimeString(
+                            string, DateTime.parse("2000-01-01")),
                       ]).val();
                     },
                   ),

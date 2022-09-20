@@ -33,6 +33,10 @@ Avaliable rules
 * Requiredif: check if exist value if
 * Same: value must be same
 * Size string: value size check
+* Minimum date time: parse string and check is date is after the minimum
+* maximum date time: parse string and check is date is before the maximum
+* Size string: value size check
+
 
 ## packages.yaml
 ```yaml
