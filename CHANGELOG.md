@@ -9,3 +9,6 @@
 ## 1.1.0 [2022-09-20]
 * Add minimum date time rule
 * Add maximum date time rule
+
+## 1.2.0 [2023-02-20]
+* Add integer rule

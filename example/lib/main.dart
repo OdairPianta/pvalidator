@@ -67,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController sizeStringController = TextEditingController();
   TextEditingController minDateTimeController = TextEditingController();
   TextEditingController maxDateTimeController = TextEditingController();
+  TextEditingController integerController = TextEditingController();
   TextEditingController multipleController = TextEditingController();
   TextEditingController customController = TextEditingController();
 
@@ -91,6 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
     sizeStringController.text = '123456';
     minDateTimeController.text = '2000-01-01';
     maxDateTimeController.text = '2020-01-01';
+    integerController.text = '2.2';
     multipleController.text = '';
     customController.text = 'other string';
     super.initState();
@@ -296,6 +298,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       return PValidator([
                         PRuleMaxDateTimeString(
                             string, DateTime.parse("2000-01-01")),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('integer'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: integerController,
+                    validator: (string) {
+                      return PValidator([
+                        PRuleInteger(string),
                       ]).val();
                     },
                   ),

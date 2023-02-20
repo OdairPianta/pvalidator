@@ -36,6 +36,7 @@ Avaliable rules
 * Minimum date time: parse string and check is date is after the minimum
 * maximum date time: parse string and check is date is before the maximum
 * Size string: value size check
+* Integer: check value is a integer
 
 
 ## packages.yaml

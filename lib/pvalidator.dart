@@ -17,3 +17,4 @@ export 'src/rules/prule_same.dart';
 export 'src/rules/prule_size_string.dart';
 export 'src/rules/prule_max_datetime_string.dart';
 export 'src/rules/prule_min_datetime_string.dart';
+export 'src/rules/prule_integer.dart';
