@@ -18,3 +18,5 @@ export 'src/rules/prule_size_string.dart';
 export 'src/rules/prule_max_datetime_string.dart';
 export 'src/rules/prule_min_datetime_string.dart';
 export 'src/rules/prule_integer.dart';
+export 'src/rules/prule_cpf.dart';
+export 'src/rules/prule_cnpj.dart';

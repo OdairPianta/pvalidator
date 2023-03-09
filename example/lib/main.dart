@@ -68,6 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController minDateTimeController = TextEditingController();
   TextEditingController maxDateTimeController = TextEditingController();
   TextEditingController integerController = TextEditingController();
+  TextEditingController cpfController = TextEditingController();
+  TextEditingController cnpjController = TextEditingController();
   TextEditingController multipleController = TextEditingController();
   TextEditingController customController = TextEditingController();
 
@@ -93,6 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
     minDateTimeController.text = '2000-01-01';
     maxDateTimeController.text = '2020-01-01';
     integerController.text = '2.2';
+    cpfController.text = '99988877766';
+    cnpjController.text = '99888777666655';
     multipleController.text = '';
     customController.text = 'other string';
     super.initState();
@@ -310,6 +314,30 @@ class _MyHomePageState extends State<MyHomePage> {
                     validator: (string) {
                       return PValidator([
                         PRuleInteger(string),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('CPF'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: cpfController,
+                    validator: (string) {
+                      return PValidator([
+                        PRuleCpf(string),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('CNPJ'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: cnpjController,
+                    validator: (string) {
+                      return PValidator([
+                        PRuleCnpj(string),
                       ]).val();
                     },
                   ),

@@ -12,3 +12,7 @@
 
 ## 1.2.0 [2023-02-20]
 * Add integer rule
+
+## 1.3.0 [2023-03-08]
+* Add brazilian CPF rule
+* Add brazilian CNPJ rule
