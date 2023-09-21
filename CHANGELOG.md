@@ -16,3 +16,6 @@
 ## 1.3.0 [2023-03-08]
 * Add brazilian CPF rule
 * Add brazilian CNPJ rule
+
+## 1.3.1 [2023-09-20]
+* Changed same rule dows not show compared value

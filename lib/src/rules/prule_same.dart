@@ -13,7 +13,7 @@ class PRuleSame implements Rule {
     if (this._value == null || this._value?.trim().length == 0) {
       return null;
     } else if (this._value != this._compare) {
-      return "${this.message} ${this._compare}";
+      return "${this.message}";
     } else {
       return null;
     }
