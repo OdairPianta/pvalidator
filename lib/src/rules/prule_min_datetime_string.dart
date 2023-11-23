@@ -16,7 +16,7 @@ class PRuleMinDateTimeString implements Rule {
   String? validate() {
     DateTime? dateTime = DateTime.tryParse(_value ?? '');
 
-    if (_value == null || _value?.trim().length == 0 || dateTime == null) {
+    if (_value == null || _value?.trim().isEmpty == true || dateTime == null) {
       return null;
     } else if (dateTime.compareTo(min) < 0) {
       return message + ' ' + min.toString();

@@ -14,7 +14,7 @@ class PRuleNumeric implements Rule {
 
   @override
   String? validate() {
-    if (_value == null || _value?.trim().length == 0) {
+    if (_value == null || _value?.trim().isEmpty == true) {
       return null;
     } else if (!RegExp(r"^[0-9]+\" + separator + r"*[0-9]*$")
         .hasMatch(_value ?? '')) {

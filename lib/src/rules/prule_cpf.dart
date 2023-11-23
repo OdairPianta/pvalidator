@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleCpf implements Rule {
-  static const List<String> BLACKLIST = [
+  static const List<String> blackList = [
     "00000000000",
     "11111111111",
     "22222222222",
@@ -27,7 +27,7 @@ class PRuleCpf implements Rule {
 
   @override
   String? validate() {
-    if (_value == null || _value?.trim().length == 0) {
+    if (_value == null || _value?.trim().isEmpty == true) {
       return null;
     } else if (isValid((_value))) {
       return null;
@@ -45,7 +45,7 @@ class PRuleCpf implements Rule {
       return false;
     }
 
-    if (BLACKLIST.indexOf(cpf) != -1) {
+    if (blackList.contains(cpf)) {
       return false;
     }
 
@@ -87,7 +87,7 @@ class PRuleCpf implements Rule {
 
   static String strip(String? cpf) {
     RegExp regExp = RegExp(r'[^\d]');
-    cpf = cpf == null ? "" : cpf;
+    cpf = cpf ?? "";
 
     return cpf.replaceAll(regExp, "");
   }

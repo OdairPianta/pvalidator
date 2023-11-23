@@ -14,9 +14,9 @@ class PRuleMaxDateTimeString implements Rule {
 
   @override
   String? validate() {
-    DateTime? dateTime = DateTime.tryParse(this._value ?? '');
+    DateTime? dateTime = DateTime.tryParse(_value ?? '');
 
-    if (_value == null || _value?.trim().length == 0 || dateTime == null) {
+    if (_value == null || _value?.trim().isEmpty == true || dateTime == null) {
       return null;
     } else if (dateTime.compareTo(max) > 0) {
       return message + ' ' + max.toString();

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleCnpj implements Rule {
-  static const List<String> BLACKLIST = [
+  static const List<String> blackList = [
     "00000000000000",
     "11111111111111",
     "22222222222222",
@@ -26,7 +26,7 @@ class PRuleCnpj implements Rule {
 
   @override
   String? validate() {
-    if (_value == null || _value?.trim().length == 0) {
+    if (_value == null || _value?.trim().isEmpty == true) {
       return null;
     } else if (isValid((_value))) {
       return null;
@@ -44,7 +44,7 @@ class PRuleCnpj implements Rule {
       return false;
     }
 
-    if (BLACKLIST.indexOf(cnpj) != -1) {
+    if (blackList.contains(cnpj)) {
       return false;
     }
 
@@ -68,10 +68,10 @@ class PRuleCnpj implements Rule {
 
     int sum = 0;
 
-    reverse.forEach((number) {
+    for (var number in reverse) {
       sum += number * index;
       index = (index == 9 ? 2 : index + 1);
-    });
+    }
 
     int mod = sum % 11;
 
@@ -87,7 +87,7 @@ class PRuleCnpj implements Rule {
 
   String strip(String? cnpj) {
     RegExp regex = RegExp(r'[^\d]');
-    cnpj = cnpj == null ? "" : cnpj;
+    cnpj = cnpj ?? "";
 
     return cnpj.replaceAll(regex, "");
   }

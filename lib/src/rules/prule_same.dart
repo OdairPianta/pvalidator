@@ -14,7 +14,7 @@ class PRuleSame implements Rule {
 
   @override
   String? validate() {
-    if (_value == null || _value?.trim().length == 0) {
+    if (_value == null || _value?.trim().isEmpty == true) {
       return null;
     } else if (_value != _compare) {
       return message;

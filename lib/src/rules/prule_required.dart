@@ -11,7 +11,7 @@ class PRuleRequired implements Rule {
 
   @override
   String? validate() {
-    if (_value == null || _value?.trim().length == 0) {
+    if (_value == null || _value?.trim().isEmpty == true) {
       return message;
     } else {
       return null;

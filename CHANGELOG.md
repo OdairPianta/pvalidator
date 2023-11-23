@@ -21,10 +21,11 @@
 * Changed same rule dows not show compared value
 * Add tests
 
-## 1.5.1 [2023-11-23]
+## 1.5.2 [2023-11-23]
 * Added rule only one field
 * Added tests to check valid values
 * Improve documentation
 * Changed sdk range
 * Changed rule attributes to final
 * Added test to check custom message
+* Fixed lints

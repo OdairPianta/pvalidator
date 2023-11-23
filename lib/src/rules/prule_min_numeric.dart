@@ -14,10 +14,12 @@ class PRuleMinNumeric implements Rule {
   @override
   String? validate() {
     double? doubleValue = double.tryParse(_value ?? '');
-    if (_value == null || _value?.trim().length == 0 || doubleValue == null) {
+    if (_value == null ||
+        _value?.trim().isEmpty == true ||
+        doubleValue == null) {
       return null;
     } else if (doubleValue < min) {
-      return "$message ${min}";
+      return "$message $min";
     } else {
       return null;
     }
