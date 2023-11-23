@@ -1,20 +1,24 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleNumeric implements Rule {
-  String? _value;
-  String separator;
-  String message;
+  final String? _value;
+  final String separator;
+  final String message;
 
+  /// Check if the value is a valid number
+  /// [value] is the value to check
+  /// [separator] is the separator for the decimal
+  /// [message] is the error message
   PRuleNumeric(this._value,
       {this.separator = ".", this.message = "Invalid number"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
-    } else if (!RegExp(r"^[0-9]+\" + this.separator + r"*[0-9]*$")
-        .hasMatch(this._value ?? '')) {
-      return this.message;
+    } else if (!RegExp(r"^[0-9]+\" + separator + r"*[0-9]*$")
+        .hasMatch(_value ?? '')) {
+      return message;
     } else {
       return null;
     }

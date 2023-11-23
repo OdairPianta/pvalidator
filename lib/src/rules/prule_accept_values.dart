@@ -1,19 +1,23 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleAcceptValues implements Rule {
-  String? _value;
-  List<String> listAccept;
-  String message;
+  final String? _value;
+  final List<String> listAccept;
+  final String message;
 
+  /// Check if the value is in the list of accepted values
+  /// [value] is the value to check
+  /// [listAccept] is the list of accepted values
+  /// [message] is the error message
   PRuleAcceptValues(this._value, this.listAccept,
       {this.message = "Invalid value"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
-    } else if (!listAccept.contains(this._value)) {
-      return this.message;
+    } else if (!listAccept.contains(_value)) {
+      return message;
     } else {
       return null;
     }

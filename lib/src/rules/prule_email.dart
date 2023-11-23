@@ -1,19 +1,22 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleEmail implements Rule {
-  String? _value;
-  String message;
+  final String? _value;
+  final String message;
 
+  /// Check if the value is a valid e-mail
+  /// [value] is the value to check
+  /// [message] is the error message
   PRuleEmail(this._value, {this.message = "Invalid e-mail"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
     } else if (!RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-        .hasMatch(this._value ?? '')) {
-      return this.message;
+        .hasMatch(_value ?? '')) {
+      return message;
     } else {
       return null;
     }

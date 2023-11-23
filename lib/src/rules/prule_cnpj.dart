@@ -16,19 +16,22 @@ class PRuleCnpj implements Rule {
     "99999999999999"
   ];
 
-  String? _value;
-  String message;
+  final String? _value;
+  final String message;
 
+  /// Check if the value is a valid CNPJ
+  /// [value] is the value to check
+  /// [message] is the error message
   PRuleCnpj(this._value, {this.message = "Invalid CNPJ"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
-    } else if (this.isValid((this._value))) {
+    } else if (isValid((_value))) {
       return null;
     } else {
-      return this.message;
+      return message;
     }
   }
 

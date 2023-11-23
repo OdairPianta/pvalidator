@@ -1,18 +1,22 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleMaxString implements Rule {
-  String? _value;
-  int max;
-  String message;
+  final String? _value;
+  final int max;
+  final String message;
 
+  /// Check if the value size less than or equal to the max value
+  /// [value] is the value to check
+  /// [max] is the maximum size of value
+  /// [message] is the error message
   PRuleMaxString(this._value, this.max, {this.message = "Maximum size is"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
-    } else if (this._value!.length > this.max) {
-      return "${this.message} ${this.max.toString()}";
+    } else if (_value!.length > max) {
+      return "$message ${max.toString()}";
     } else {
       return null;
     }

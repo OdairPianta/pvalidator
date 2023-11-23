@@ -20,3 +20,4 @@ export 'src/rules/prule_min_datetime_string.dart';
 export 'src/rules/prule_integer.dart';
 export 'src/rules/prule_cpf.dart';
 export 'src/rules/prule_cnpj.dart';
+export 'src/rules/prule_only_one_field.dart';

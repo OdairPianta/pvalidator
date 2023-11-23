@@ -1,10 +1,14 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleMaxDateTimeString implements Rule {
-  String? _value;
-  DateTime max;
-  String message;
+  final String? _value;
+  final DateTime max;
+  final String message;
 
+  /// Check if the value is before the maximum date
+  /// [value] is the value to check
+  /// [max] is the maximum date
+  /// [message] is the error message
   PRuleMaxDateTimeString(this._value, this.max,
       {this.message = "Maximum date is"});
 
@@ -12,12 +16,10 @@ class PRuleMaxDateTimeString implements Rule {
   String? validate() {
     DateTime? dateTime = DateTime.tryParse(this._value ?? '');
 
-    if (this._value == null ||
-        this._value?.trim().length == 0 ||
-        dateTime == null) {
+    if (_value == null || _value?.trim().length == 0 || dateTime == null) {
       return null;
     } else if (dateTime.compareTo(max) > 0) {
-      return this.message + ' ' + this.max.toString();
+      return message + ' ' + max.toString();
     } else {
       return null;
     }

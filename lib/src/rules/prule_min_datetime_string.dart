@@ -1,23 +1,25 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleMinDateTimeString implements Rule {
-  String? _value;
-  DateTime min;
-  String message;
+  final String? _value;
+  final DateTime min;
+  final String message;
 
+  /// Check if the value is after the minimum date
+  /// [value] is the value to check
+  /// [min] is the minimum date
+  /// [message] is the error message
   PRuleMinDateTimeString(this._value, this.min,
       {this.message = "Minimum date is"});
 
   @override
   String? validate() {
-    DateTime? dateTime = DateTime.tryParse(this._value ?? '');
+    DateTime? dateTime = DateTime.tryParse(_value ?? '');
 
-    if (this._value == null ||
-        this._value?.trim().length == 0 ||
-        dateTime == null) {
+    if (_value == null || _value?.trim().length == 0 || dateTime == null) {
       return null;
     } else if (dateTime.compareTo(min) < 0) {
-      return this.message + ' ' + this.min.toString();
+      return message + ' ' + min.toString();
     } else {
       return null;
     }

@@ -1,19 +1,23 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleSame implements Rule {
-  String? _value;
-  String? _compare;
-  String message;
+  final String? _value;
+  final String? _compare;
+  final String message;
 
+  /// Check if the value is equal to the compare value
+  /// [value] is the value to check
+  /// [compare] is the value to compare
+  /// [message] is the error message
   PRuleSame(this._value, this._compare,
       {this.message = "Value must be equal to"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
-    } else if (this._value != this._compare) {
-      return "${this.message}";
+    } else if (_value != _compare) {
+      return message;
     } else {
       return null;
     }

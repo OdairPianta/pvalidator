@@ -20,3 +20,10 @@
 ## 1.4.1 [2023-09-20]
 * Changed same rule dows not show compared value
 * Add tests
+
+## 1.5.1 [2023-11-23]
+* Added rule only one field
+* Added tests to check valid values
+* Improve documentation
+* Changed sdk range
+* Changed rule attributes to final

@@ -1,18 +1,22 @@
 import 'package:pvalidator/src/rules/rule.dart';
 
 class PRuleMinString implements Rule {
-  String? _value;
-  int min;
-  String message;
+  final String? _value;
+  final int min;
+  final String message;
 
+  /// Check if the value size greater than or equal to the min value
+  /// [value] is the value to chec
+  /// [min] is the minimum size of value
+  /// [message] is the error message
   PRuleMinString(this._value, this.min, {this.message = "Minimum size is"});
 
   @override
   String? validate() {
-    if (this._value == null || this._value?.trim().length == 0) {
+    if (_value == null || _value?.trim().length == 0) {
       return null;
-    } else if (this._value!.length < this.min) {
-      return "${this.message} ${this.min}";
+    } else if (_value!.length < min) {
+      return "$message $min";
     } else {
       return null;
     }

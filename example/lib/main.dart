@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController integerController = TextEditingController();
   TextEditingController cpfController = TextEditingController();
   TextEditingController cnpjController = TextEditingController();
+  TextEditingController onlyOneFieldController = TextEditingController();
   TextEditingController multipleController = TextEditingController();
   TextEditingController customController = TextEditingController();
 
@@ -97,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
     integerController.text = '2.2';
     cpfController.text = '99988877766';
     cnpjController.text = '99888777666655';
+    onlyOneFieldController.text = 'this field is present';
     multipleController.text = '';
     customController.text = 'other string';
     super.initState();
@@ -338,6 +340,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     validator: (string) {
                       return PValidator([
                         PRuleCnpj(string),
+                      ]).val();
+                    },
+                  ),
+                ),
+                const Text('Only one field'),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: TextFormField(
+                    controller: onlyOneFieldController,
+                    validator: (string) {
+                      return PValidator([
+                        PRuleOnlyOneField([string, "other field"]),
                       ]).val();
                     },
                   ),
