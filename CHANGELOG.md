@@ -27,3 +27,4 @@
 * Improve documentation
 * Changed sdk range
 * Changed rule attributes to final
+* Added test to check custom message

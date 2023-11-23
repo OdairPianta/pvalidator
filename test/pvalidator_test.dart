@@ -271,4 +271,11 @@ void main() {
     ]).val();
     expect(result, isNull);
   });
+
+  test('custom message is working', () {
+    String? result = PValidator([
+      PRuleRequired("", message: "message to check"),
+    ]).val();
+    expect(result, "message to check");
+  });
 }
