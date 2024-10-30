@@ -1,6 +1,6 @@
 name: pvalidator
 description: A simple helper to validate inputs on flutter optimized for forms.
-version: 1.5.2
+version: 1.6.0
 homepage: https://github.com/OdairPianta/pvalidator
 
 environment:

@@ -29,3 +29,6 @@
 * Changed rule attributes to final
 * Added test to check custom message
 * Fixed lints
+
+## 1.6.0 [2024-10-30]
+* Added required date

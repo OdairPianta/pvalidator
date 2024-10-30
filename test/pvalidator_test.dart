@@ -145,6 +145,20 @@ void main() {
     expect(result, isNull);
   });
 
+  test('rule required date return error message', () {
+    String? result = PValidator([
+      PRuleRequiredDate(null),
+    ]).val();
+    expect(result, isNotNull);
+  });
+
+  test('rule required date does not return an error message', () {
+    String? result = PValidator([
+      PRuleRequiredDate(DateTime.now()),
+    ]).val();
+    expect(result, isNull);
+  });
+
   test('rule required if return error message', () {
     String? result = PValidator([
       PRuleRequiredIf("", true),
@@ -168,8 +182,7 @@ void main() {
 
   test('rule same does not return an error message', () {
     String? result = PValidator([
-      PRuleSame(
-          "this value is same other value", "this value is same other value"),
+      PRuleSame("this value is same other value", "this value is same other value"),
     ]).val();
     expect(result, isNull);
   });

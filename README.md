@@ -30,6 +30,7 @@ Avaliable rules
 * Numeric: check value is numeric
 * Regexp: validate with regular expression
 * Required: check if exist value
+* RequiredDate: check if exist value
 * Requiredif: check if exist value if
 * Same: value must be same
 * Size string: value size check

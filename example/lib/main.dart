@@ -289,8 +289,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     controller: minDateTimeController,
                     validator: (string) {
                       return PValidator([
-                        PRuleMinDateTimeString(
-                            string, DateTime.parse("2020-01-01")),
+                        PRuleMinDateTimeString(string, DateTime.parse("2020-01-01")),
                       ]).val();
                     },
                   ),
@@ -302,8 +301,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     controller: maxDateTimeController,
                     validator: (string) {
                       return PValidator([
-                        PRuleMaxDateTimeString(
-                            string, DateTime.parse("2000-01-01")),
+                        PRuleMaxDateTimeString(string, DateTime.parse("2000-01-01")),
                       ]).val();
                     },
                   ),
